@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
         binding.queryData.setOnClickListener {
             // query data
             val uri = Uri.parse("content://com.example.databasetest.provider/book")
-            contentResolver.query(uri, null, null, null, null)?.apply {
+            contentResolver.query(uri, null, null, null, null)?.build {
                 while (moveToNext()) {
                     val name = getString(getColumnIndex("name"))
                     val author = getString(getColumnIndex("author"))
